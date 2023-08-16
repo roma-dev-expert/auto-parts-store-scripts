@@ -7,9 +7,11 @@ namespace ExcelTransformer.Models
     public class ExcelParser
     {
         private CarBrandDatabase CarBrandDatabase;
-        public ExcelParser(CarBrandDatabase carBrandDatabase)
+        private string[] Headers;
+        public ExcelParser(CarBrandDatabase carBrandDatabase, string[] headers)
         {
             CarBrandDatabase = carBrandDatabase;
+            Headers = headers;
         }
 
         public void TransformExcel(string inputPath, string outputPath)
@@ -22,28 +24,28 @@ namespace ExcelTransformer.Models
                 HSSFWorkbook outputWorkbook = new HSSFWorkbook();
                 ISheet outputSheet = outputWorkbook.CreateSheet("OutputSheet");
 
-                // Заголовки новых колонок
-                string[] headers = { "Как сейчас", "Группа", "Подгруппа", "Дополнение", "Марка", "Модель", "год",
-                                     "Артикул", "Артикул оригинала", "Розничная", "Центральный склад Алматы" };
                 IRow headerRow = outputSheet.CreateRow(0);
-                for (int i = 0; i < headers.Length; i++)
+                for (int i = 0; i < Headers.Length; i++)
                 {
-                    headerRow.CreateCell(i).SetCellValue(headers[i]);
+                    headerRow.CreateCell(i).SetCellValue(Headers[i]);
                 }
 
-                int rowIndex = 1;
+                int rowIndex = 1; 
+                List<string> emptyBrandList = new List<string>();
                 while (sheet.GetRow(rowIndex) != null)
                 {
                     IRow row = sheet.GetRow(rowIndex);
-                    string article = row.GetCell(0).ToString();
-                    string originalArticle = row.GetCell(1).ToString();
-                    string nomenclature = row.GetCell(2).ToString();
-                    string retail = row.GetCell(3).ToString();
-                    string centralAlmaty = row.GetCell(4).ToString();
+                    string article = row.GetCell(0).ToString() ?? "";
+                    string originalArticle = row.GetCell(1).ToString() ?? "";
+                    string nomenclature = row.GetCell(2).ToString() ?? "";
+                    string retail = row.GetCell(3).ToString() ?? "";
+                    string centralAlmaty = row.GetCell(4).ToString() ?? "";
 
                     var nomenclatureParser = new NomenclatureParser(nomenclature, article, originalArticle);
                     var parsedNomenclature = nomenclatureParser.ParseNomenclature();
                     var brand = CarBrandDatabase.FindBrandByModel(parsedNomenclature.Model);
+
+                    if (string.IsNullOrEmpty(brand) && brand != "MD" && brand != "AD") emptyBrandList.Add(parsedNomenclature.Model);
 
                     IRow newRow = outputSheet.CreateRow(rowIndex);
                     newRow.CreateCell(0).SetCellValue(nomenclature);
@@ -60,6 +62,8 @@ namespace ExcelTransformer.Models
 
                     rowIndex++;
                 }
+
+                emptyBrandList = emptyBrandList.Distinct().ToList();
 
                 using (var fsOutput = new FileStream(outputPath, FileMode.Create, FileAccess.Write))
                 {

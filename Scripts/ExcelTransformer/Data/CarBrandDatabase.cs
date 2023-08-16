@@ -16,7 +16,7 @@ namespace ExcelTransformer.Data
             {
                 foreach (var model in brand.GetChildren())
                 {
-                    if (modelName.IndexOf(model.Value, StringComparison.OrdinalIgnoreCase) >= 0)
+                    if (modelName.Contains(value: model.Value ?? "", comparisonType: StringComparison.OrdinalIgnoreCase))
                     {
                         return brand.Key;
                     }

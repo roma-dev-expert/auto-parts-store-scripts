@@ -13,8 +13,9 @@ namespace ExcelTransformer
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            var CarBrandDatabase = new CarBrandDatabase(configuration); 
-            var ExcelParser = new ExcelParser(CarBrandDatabase);
+            var CarBrandDatabase = new CarBrandDatabase(configuration);
+            string[] headers = configuration.GetSection("Headers").Get<string[]>() ?? new string[0];
+            var ExcelParser = new ExcelParser(CarBrandDatabase, headers);
 
             string inputFilePath = "input.xls";
             string outputFilePath = "output.xls";
