@@ -2,12 +2,13 @@
 
 namespace ExcelTransformer.Helpers
 {
-    class StringHelpers
+    public static class StringHelpers
     {
         public static bool IsRussianText(string word)
         {
             return Regex.IsMatch(word, @"^[\p{IsCyrillic}]+$");
         }
+
         public static bool IsOpeningBracket(string word)
         {
             return word.StartsWith("(");
@@ -20,12 +21,15 @@ namespace ExcelTransformer.Helpers
 
         public static bool IsLHOrRH(string word)
         {
-            return word == "LH" || word == "RH";
+            return word.Equals("LH", StringComparison.OrdinalIgnoreCase) ||
+                   word.Equals("RH", StringComparison.OrdinalIgnoreCase);
         }
 
         public static bool IsYearFormat(string word)
         {
-            return Regex.IsMatch(word, @"^\d{2}(-\d{2}|\-)?$") || Regex.IsMatch(word, @"^\d{4}-$") || Regex.IsMatch(word, @"^\d{ 4} (-\d{ 4})?$");
+            return Regex.IsMatch(word, @"^\d{2}(-\d{2}|\-)?$") ||
+                   Regex.IsMatch(word, @"^\d{4}-$") ||
+                   Regex.IsMatch(word, @"^\d{4}(-\d{4})?$");
         }
 
         public static string[] ExtractNomenclatureWithoutArticles(string input, string article, string originalArticle)
@@ -39,14 +43,15 @@ namespace ExcelTransformer.Helpers
             if (articleIndex >= 0) smallestIndex = Math.Min(smallestIndex, articleIndex);
             if (originalArticleIndex >= 0) smallestIndex = Math.Min(smallestIndex, originalArticleIndex);
 
-            if (smallestIndex < words.Length) return words.Take(smallestIndex).ToArray();
-            
+            if (smallestIndex < words.Length && smallestIndex != 0) return words.Take(smallestIndex).ToArray();
+
             return new string[0];
         }
 
         public static bool IsArticle(string word, string article, string originalArticle)
         {
-            return word.ToUpper() == article.ToUpper() || word.ToUpper() == originalArticle.ToUpper();
+            return word.Equals(article, StringComparison.OrdinalIgnoreCase) ||
+                   word.Equals(originalArticle, StringComparison.OrdinalIgnoreCase);
         }
 
         public static string[] SplitBySpace(string input)

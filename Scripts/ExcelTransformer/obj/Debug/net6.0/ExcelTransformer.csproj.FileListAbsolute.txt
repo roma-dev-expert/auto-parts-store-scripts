@@ -74,3 +74,8 @@ D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\System.Text
 D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
 D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
 D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Serilog.dll
+D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Serilog.Sinks.File.dll
