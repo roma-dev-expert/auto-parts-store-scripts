@@ -1,6 +1,4 @@
-﻿using ExcelTransformer.Data;
-using ExcelTransformer.Models;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Serilog;
 
 namespace ExcelTransformer
@@ -9,31 +7,27 @@ namespace ExcelTransformer
     {
         static void Main()
         {
+            Log.Logger = new LoggerConfiguration().WriteTo.Console().WriteTo.File("log.txt").CreateLogger();
+
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
-                .Build();
+                .Build(); 
 
+            var excelParser = new Models.ExcelTransformer(configuration.GetSection("Headers"));
 
-            Log.Logger = new LoggerConfiguration().WriteTo.Console().WriteTo.File("log.txt").CreateLogger();
+            string inputFilePath = FindFirstXlsFile(Directory.GetCurrentDirectory());
+            string outputFilePath = "output.xls";
 
-            var carBrandDatabase = new CarBrandDatabase(configuration);
-            string[] headers = configuration.GetSection("Headers").Get<string[]>() ?? new string[0];
-
-            if (headers == null || headers.Length == 0)
+            if (string.IsNullOrEmpty(inputFilePath))
             {
-                Log.Error("Ошибка: Не удалось получить заголовки из конфигурации.");
+                Log.Error("Не найдены файлы с расширением .xls в текущей директории.");
                 return;
             }
 
-            var excelParser = new ExcelParser(carBrandDatabase, headers);
-
-            string inputFilePath = "input.xls";
-            string outputFilePath = "output.xls";
-
             try
             {
-                excelParser.TransformExcel(inputFilePath, outputFilePath);
+                excelParser.TransformToNomenclature(inputFilePath, outputFilePath);
                 Log.Information("Преобразование завершено.");
             }
             catch (Exception ex)
@@ -44,6 +38,13 @@ namespace ExcelTransformer
             {
                 Log.CloseAndFlush();
             }
+        }
+
+        static string FindFirstXlsFile(string directory)
+        {
+            string[] xlsFiles = Directory.GetFiles(directory, "*.xls");
+
+            return xlsFiles.FirstOrDefault() ?? "";
         }
     }
 }
