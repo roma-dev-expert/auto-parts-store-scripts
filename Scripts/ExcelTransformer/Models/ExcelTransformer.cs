@@ -72,7 +72,7 @@ namespace ExcelTransformer.Models
                         outputWorkbook.Write(fsOutput);
                     }
                 }
-                Log.Information("Transformation completed successfully.");
+                Log.Information("Transformation 1C output file to Nomenclature completed successfully.");
             }
             catch (Exception ex)
             {
@@ -141,7 +141,7 @@ namespace ExcelTransformer.Models
                         outputWorkbook.Write(fsOutput);
                     }
                 }
-                Log.Information("Transformation completed successfully.");
+                Log.Information("Transformation Nomenclature to Ads completed successfully.");
             }
             catch (Exception ex)
             {
