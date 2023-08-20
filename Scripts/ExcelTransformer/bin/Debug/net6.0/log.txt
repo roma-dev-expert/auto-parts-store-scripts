@@ -2723,3 +2723,145 @@ System.IO.IOException: The process cannot access the file 'D:\Dev\Freelance\bobr
 2023-08-18 12:32:15.821 +03:00 [INF] Преобразование завершено.
 2023-08-18 12:35:47.830 +03:00 [INF] Transformation completed successfully.
 2023-08-18 12:35:47.873 +03:00 [INF] Преобразование завершено.
+2023-08-18 18:04:36.288 +03:00 [INF] Transformation completed successfully.
+2023-08-18 18:04:51.252 +03:00 [INF] Преобразование завершено.
+2023-08-18 18:08:12.462 +03:00 [ERR] An error occurred during transformation.
+System.IO.IOException: The process cannot access the file 'D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Ads.xls' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToNomenclature(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 34
+2023-08-18 18:08:12.962 +03:00 [ERR] Произошла ошибка.
+System.IO.IOException: The process cannot access the file 'D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Nomenclature.xls' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 86
+   at ExcelTransformer.Program.Main() in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Program.cs:line 33
+2023-08-18 18:10:14.773 +03:00 [INF] Transformation completed successfully.
+2023-08-18 18:10:18.205 +03:00 [INF] Преобразование завершено.
+2023-08-18 18:11:50.614 +03:00 [INF] Transformation completed successfully.
+2023-08-18 18:11:51.213 +03:00 [INF] Преобразование завершено.
+2023-08-18 18:12:21.343 +03:00 [INF] Transformation completed successfully.
+2023-08-18 18:12:21.670 +03:00 [INF] Преобразование завершено.
+2023-08-18 18:13:00.215 +03:00 [INF] Transformation completed successfully.
+2023-08-18 18:13:00.945 +03:00 [INF] Преобразование завершено.
+2023-08-18 18:13:57.228 +03:00 [INF] Transformation completed successfully.
+2023-08-18 18:13:57.524 +03:00 [INF] Преобразование завершено.
+2023-08-18 18:14:53.624 +03:00 [INF] Transformation completed successfully.
+2023-08-18 18:14:54.429 +03:00 [INF] Преобразование завершено.
+2023-08-19 14:36:38.924 +03:00 [INF] Transformation completed successfully.
+2023-08-19 14:36:39.245 +03:00 [INF] Преобразование завершено.
+2023-08-19 14:47:46.684 +03:00 [INF] Transformation completed successfully.
+2023-08-19 14:47:52.076 +03:00 [INF] Преобразование завершено.
+2023-08-19 18:44:23.500 +03:00 [ERR] An error occurred during transformation.
+System.IO.IOException: The process cannot access the file 'D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Nomenclature.xls' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToNomenclature(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 73
+2023-08-19 18:44:24.188 +03:00 [ERR] Произошла ошибка.
+System.IO.IOException: The process cannot access the file 'D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Nomenclature.xls' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 90
+   at ExcelTransformer.Program.Main() in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Program.cs:line 34
+2023-08-19 18:46:08.315 +03:00 [INF] Transformation completed successfully.
+2023-08-19 18:53:55.813 +03:00 [INF] Transformation completed successfully.
+2023-08-19 18:58:27.279 +03:00 [INF] Transformation completed successfully.
+2023-08-19 18:59:14.923 +03:00 [ERR] An error occurred during transformation.
+System.Collections.Generic.KeyNotFoundException: The given key 'template1' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 110
+2023-08-19 18:59:14.989 +03:00 [INF] Преобразование завершено.
+2023-08-19 19:02:35.969 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:02:59.664 +03:00 [ERR] An error occurred during transformation.
+System.Collections.Generic.KeyNotFoundException: The given key '������' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at ExcelTransformer.Models.ExcelTransformer.TransformUsingTemplate(Template template, IDictionary`2 columnIndexMap, IRow row) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 244
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 129
+2023-08-19 19:02:59.734 +03:00 [INF] Преобразование завершено.
+2023-08-19 19:03:31.715 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:17:41.827 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:20:07.859 +03:00 [INF] Преобразование завершено.
+2023-08-19 19:21:47.797 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:22:44.868 +03:00 [INF] Преобразование завершено.
+2023-08-19 19:49:55.808 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:50:00.218 +03:00 [ERR] An error occurred during transformation.
+System.IO.IOException: The process cannot access the file 'D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\bin\Debug\net6.0\Ads.xls' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 140
+2023-08-19 19:50:00.369 +03:00 [INF] Преобразование завершено.
+2023-08-19 19:50:21.777 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:50:25.506 +03:00 [INF] Преобразование завершено.
+2023-08-19 19:51:14.425 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:51:15.295 +03:00 [INF] Преобразование завершено.
+2023-08-19 19:51:31.555 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:52:33.597 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:53:14.117 +03:00 [INF] Преобразование завершено.
+2023-08-19 19:57:22.958 +03:00 [INF] Transformation completed successfully.
+2023-08-19 19:57:23.447 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:04:17.541 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:04:17.896 +03:00 [ERR] An error occurred during transformation.
+System.ArgumentException: Invalid column index (-1).  Allowable column range for BIFF8 is (0..255) or ('A'..'IV')
+   at NPOI.HSSF.UserModel.HSSFCell.CheckBounds(Int32 cellIndex)
+   at NPOI.HSSF.UserModel.HSSFRow.CreateCell(Int32 columnIndex, CellType type)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 121
+2023-08-19 20:04:18.065 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:04:52.956 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:07:12.514 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:10:05.675 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:10:07.220 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:10:34.514 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:12:43.495 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:16:12.095 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:16:31.246 +03:00 [ERR] An error occurred during transformation.
+System.ArgumentException: Invalid column index (-1).  Allowable column range for BIFF8 is (0..255) or ('A'..'IV')
+   at NPOI.HSSF.UserModel.HSSFCell.CheckBounds(Int32 cellIndex)
+   at NPOI.HSSF.UserModel.HSSFRow.CreateCell(Int32 columnIndex, CellType type)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 126
+2023-08-19 20:16:31.395 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:16:48.896 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:16:57.775 +03:00 [ERR] An error occurred during transformation.
+System.ArgumentException: Invalid column index (-1).  Allowable column range for BIFF8 is (0..255) or ('A'..'IV')
+   at NPOI.HSSF.UserModel.HSSFCell.CheckBounds(Int32 cellIndex)
+   at NPOI.HSSF.UserModel.HSSFRow.CreateCell(Int32 columnIndex, CellType type)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 126
+2023-08-19 20:16:57.835 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:17:20.304 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:19:57.624 +03:00 [ERR] An error occurred during transformation.
+System.ArgumentException: Invalid column index (-1).  Allowable column range for BIFF8 is (0..255) or ('A'..'IV')
+   at NPOI.HSSF.UserModel.HSSFCell.CheckBounds(Int32 cellIndex)
+   at NPOI.HSSF.UserModel.HSSFRow.CreateCell(Int32 columnIndex, CellType type)
+   at ExcelTransformer.Models.ExcelTransformer.TransformToAds(String inputPath, String outputPath) in D:\Dev\Freelance\bobryak22\Scripts\ExcelTransformer\Models\ExcelTransformer.cs:line 126
+2023-08-19 20:19:57.698 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:20:10.410 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:22:51.601 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:23:12.625 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:31:05.719 +03:00 [ERR] Не найдены файлы с расширением .xls в текущей директории.
+2023-08-19 20:31:56.794 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:32:03.797 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:34:17.431 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:34:18.333 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:43:25.050 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:43:26.030 +03:00 [INF] Преобразование завершено.
+2023-08-19 20:50:25.817 +03:00 [INF] Transformation completed successfully.
+2023-08-19 20:50:26.829 +03:00 [INF] Преобразование завершено.

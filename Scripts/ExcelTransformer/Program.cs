@@ -9,30 +9,32 @@ namespace ExcelTransformer
         {
             Log.Logger = new LoggerConfiguration().WriteTo.Console().WriteTo.File("log.txt").CreateLogger();
 
+            string settingsPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "Settings", "appsettings.json");
+
             IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
+                .AddJsonFile(settingsPath)
                 .Build(); 
 
-            var excelParser = new Models.ExcelTransformer(configuration.GetSection("Headers"));
+            var excelParser = new Models.ExcelTransformer(configuration);
 
-            string inputFilePath = FindFirstXlsFile(Directory.GetCurrentDirectory());
-            string outputFilePath = "output.xls";
+            string unloadingFrom1CFilePath = FindFirstXlsFile("../Input");
+            string nomenclatureFilePath = "../Output/Nomenclature.xls";
+            string adsFilePath = "../Output/Ads.xls";
 
-            if (string.IsNullOrEmpty(inputFilePath))
+            if (string.IsNullOrEmpty(unloadingFrom1CFilePath))
             {
-                Log.Error("Не найдены файлы с расширением .xls в текущей директории.");
+                Log.Error("No .xls files found in current directory.");
                 return;
             }
 
             try
             {
-                excelParser.TransformToNomenclature(inputFilePath, outputFilePath);
-                Log.Information("Преобразование завершено.");
+                excelParser.TransformToNomenclature(unloadingFrom1CFilePath, nomenclatureFilePath);
+                excelParser.TransformToAds(nomenclatureFilePath, adsFilePath);
             }
             catch (Exception ex)
             {
-                Log.Error(ex, "Произошла ошибка.");
+                Log.Error(ex, "An error occurred.");
             }
             finally
             {

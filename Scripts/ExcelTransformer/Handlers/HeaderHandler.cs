@@ -2,46 +2,39 @@
 
 namespace ExcelTransformer.Handlers
 {
-    public class HeaderHandler
+    public static class HeaderHandler
     {
-        private readonly IConfigurationSection Headers;
-
-        public HeaderHandler(IConfigurationSection headers)
+        public static IList<string> ExtractHeaders(IConfigurationSection headers)
         {
-            Headers = headers;
-        }
+            List<string> result = new List<string>();
 
-        public IList<string> ExtractInputHeaders()
-        {
-            List<string> headers = new List<string>();
-
-            foreach (IConfigurationSection subSection in Headers.GetChildren())
+            foreach (IConfigurationSection subSection in headers.GetChildren())
             {
-                headers.Add(subSection.Key);
+                result.Add(subSection.Key);
             }
 
-            return headers;
+            return result;
         }
 
-        public IList<string> ExtractOutputHeaders()
+        public static IList<string> ExtractNestedHeaders(IConfigurationSection headers)
         {
-            List<string> headers = new List<string>();
+            List<string> result = new List<string>();
 
-            foreach (IConfigurationSection subSection in Headers.GetChildren())
+            foreach (IConfigurationSection subSection in headers.GetChildren())
             {
                 if (!subSection.GetChildren().Any())
                 {
-                    headers.Add(subSection.Key);
+                    result.Add(subSection.Key);
                     continue;
                 }
 
                 foreach (IConfigurationSection subSubSection in subSection.GetChildren())
                 {
-                    headers.Add(subSubSection.Key);
+                    result.Add(subSubSection.Key);
                 }
             }
 
-            return headers;
+            return result;
         }
     }
 }

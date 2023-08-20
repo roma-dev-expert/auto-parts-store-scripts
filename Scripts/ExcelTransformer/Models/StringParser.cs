@@ -19,7 +19,6 @@ namespace ExcelTransformer.Models
         {
             var result = new Dictionary<string, string>();
             
-            if (string.IsNullOrEmpty(inputString)) return result;
 
             foreach (var columnToSearchKeys in ColumnToSearchKeysDictionary)
             {
