@@ -1,3 +1,5 @@
 
 *.rar
 ExcelTransformer/Release
+ExcelTransformer/SourceCode/bin
+ExcelTransformer/SourceCode/obj
